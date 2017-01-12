@@ -12,9 +12,10 @@ const pageLimit = 5;
 
 apartmentDatas = ((apartmentsArr) => {
   for (let i = 0; i < apartmentsArr.length; i++) {
-    let singleImageData = apartmentsArr[i];
-    singleImageData.imageURL = require('../images/' + singleImageData.image);
-    apartmentsArr[i] = singleImageData;
+    let singleAptData = apartmentsArr[i];
+    singleAptData.imageURL = require('../images/' + singleAptData.image);
+    singleAptData.isFocus = false;
+    apartmentsArr[i] = singleAptData;
   }
 
   return apartmentsArr;
@@ -26,7 +27,7 @@ class AppComponent extends Component {
     super();
     this.state = {
       order: "popularity",
-      data: [],
+      data: this.currentApts(0),
       offset: 0,
       pageCount: Math.ceil(apartmentDatas.length / pageLimit)
     }
@@ -70,18 +71,38 @@ class AppComponent extends Component {
     });
   };
 
+  focus(index) {
+    return () => {
+      let apts = this.state.data;
+      apts[index].isFocus = !apts[index].isFocus;
+      this.setState({
+        data: apts
+      })
+    }
+  }
+
   render() {
     let apartments = [],
         popButtonName = "btn",
-        priceButtonName = "btn";
+        priceButtonName = "btn",
+        apartmentCounts = apartmentDatas.length + " apartment";
     if (this.state.order==="price") {
       priceButtonName += " active";
     } else {
       popButtonName += " active";
     }
 
+    if (apartmentDatas.length >1) {
+      apartmentCounts += "s"
+    }
+
     this.state.data.forEach((value, index) => {
-      apartments.push(<Apartment data={ value } key={ index } />)
+      apartments.push(
+        <Apartment
+          data={ value }
+          key={ index }
+          focus= { this.focus(index) }
+        />)
       });
 
     return (
@@ -91,7 +112,7 @@ class AppComponent extends Component {
             <div className="row">
               <div className="col-sm-10 col-sm-offset-1">
                 <div>
-                  <h2 className="title">MN: { apartmentDatas.length } Apartments</h2>
+                  <h2 className="title">{ apartmentDatas[0].description.split("|")[1] }: { apartmentCounts }</h2>
                 </div>
                 <div className="sort-buttons">
                   <button className={ popButtonName } onClick={ this.pop }>popularity</button>
@@ -101,17 +122,19 @@ class AppComponent extends Component {
                   { apartments }
                 </section>
                 <div>
-                  <ReactPaginate previousLabel={"previous"}
-                       nextLabel={"next"}
-                       breakLabel={<a href="">...</a>}
-                       breakClassName={"break-me"}
-                       pageCount={this.state.pageCount}
-                       marginPagesDisplayed={2}
-                       pageRangeDisplayed={5}
-                       onPageChange={this.handlePageClick}
-                       containerClassName={"pagination"}
-                       subContainerClassName={"pages pagination"}
-                       activeClassName={"active"} />
+                  <ReactPaginate
+                    previousLabel={"previous"}
+                    nextLabel={"next"}
+                    breakLabel={<a href="">...</a>}
+                    breakClassName={"break-me"}
+                    pageCount={this.state.pageCount}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={5}
+                    onPageChange={this.handlePageClick}
+                    containerClassName={"pagination"}
+                    subContainerClassName={"pages pagination"}
+                    activeClassName={"active"}
+                  />
                 </div>
               </div>
             </div>

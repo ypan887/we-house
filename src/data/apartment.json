@@ -5,14 +5,14 @@
     	"image": "image-1.jpg",
     	"price": 512,
     	"popularity": 4,
-    	"description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    	"description": "University of Minnesota, Twin Cities|Minneapolis, MN"
     },
     {
     	"name": "Radius @15th",
     	"image": "image-3.jpg",
     	"price": 492,
     	"popularity": 5,
-    	"description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    	"description": "University of Minnesota, Twin Cities|Minneapolis, MN"
     },
     {
 
@@ -20,7 +20,7 @@
     	"image": "image-2.jpg",
     	"price": 460,
     	"popularity": 3,
-    	"description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    	"description": "University of Minnesota, Twin Cities|Minneapolis, MN"
     },
     {
 
@@ -28,7 +28,7 @@
     	"image": "image-5.jpg",
     	"price": 532,
     	"popularity": 7,
-    	"description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    	"description": "University of Minnesota, Twin Cities|Minneapolis, MN"
     },
     {
 
@@ -36,7 +36,7 @@
       "image": "image-6.jpg",
       "price": 335,
       "popularity": 6,
-      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+      "description": "University of Minnesota, Twin Cities|Minneapolis, MN"
     },
     {
 
@@ -44,7 +44,7 @@
       "image": "image-7.jpg",
       "price": 600,
       "popularity": 8,
-      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+      "description": "University of Minnesota, Twin Cities|Minneapolis, MN"
     },
     {
 
@@ -52,7 +52,7 @@
       "image": "image-8.jpg",
       "price": 650,
       "popularity": 12,
-      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+      "description": "University of Minnesota, Twin Cities|Minneapolis, MN"
     },
     {
 
@@ -60,7 +60,7 @@
       "image": "image-9.jpg",
       "price": 559,
       "popularity": 14,
-      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+      "description": "University of Minnesota, Twin Cities|Minneapolis, MN"
     },
     {
 
@@ -68,7 +68,7 @@
       "image": "image-10.jpg",
       "price": 499,
       "popularity": 8,
-      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+      "description": "University of Minnesota, Twin Cities|Minneapolis, MN"
     },
     {
 
@@ -76,7 +76,7 @@
       "image": "image-11.jpg",
       "price": 703,
       "popularity": 15,
-      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+      "description": "University of Minnesota, Twin Cities|Minneapolis, MN"
     },
     {
 
@@ -84,7 +84,7 @@
       "image": "image-12.jpg",
       "price": 343,
       "popularity": 6,
-      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+      "description": "University of Minnesota, Twin Cities|Minneapolis, MN"
     },
     {
 
@@ -92,7 +92,7 @@
       "image": "image-4.jpg",
       "price": 555,
       "popularity": 8,
-      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+      "description": "University of Minnesota, Twin Cities|Minneapolis, MN"
     }
   ]
 }

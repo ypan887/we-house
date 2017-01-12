@@ -1,9 +1,21 @@
 import React, { Component } from 'react';
 
 class apartmentComponent extends Component {
+  handleHover(){
+    this.props.focus();
+  }
+
   render() {
+    let [address, city] = this.props.data.description.split("|");
+    let listContentClassName = 'list-content'
+
+    if (this.props.data.isFocus) {
+      listContentClassName += ' is-Focus';
+    }
+
     return(
-      <div className="row apartment">
+      <div className="row apartment" onMouseEnter={this.handleHover.bind(this)}
+    onMouseLeave={this.handleHover.bind(this)}>
         <div className="col-sm-5 col">
           <div className="list-image">
             <figure>
@@ -15,12 +27,13 @@ class apartmentComponent extends Component {
           </div>
         </div>
         <div className="col-sm-7 col">
-          <div className="list-content">
+          <div className={ listContentClassName }>
             <div className="list-title">
               <h2>{ this.props.data.name }</h2>
             </div>
             <div className="list-desc">
-              <p>{ this.props.data.description }</p>
+              <p>{ address }</p>
+              <p>{ city }</p>
             </div>
             <div className="price">
               <div>
