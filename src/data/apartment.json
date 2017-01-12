@@ -1,0 +1,98 @@
+{
+  "apartments": [
+    {
+    	"name": "The Pavilion on Berry",
+    	"image": "image-1.jpg",
+    	"price": 512,
+    	"popularity": 4,
+    	"description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    },
+    {
+    	"name": "Radius @15th",
+    	"image": "image-3.jpg",
+    	"price": 492,
+    	"popularity": 5,
+    	"description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    },
+    {
+
+    	"name": "416 Lofts",
+    	"image": "image-2.jpg",
+    	"price": 460,
+    	"popularity": 3,
+    	"description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    },
+    {
+
+    	"name": "Edge on Oak",
+    	"image": "image-5.jpg",
+    	"price": 532,
+    	"popularity": 7,
+    	"description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    },
+    {
+
+      "name": "1 bed 1 bath",
+      "image": "image-6.jpg",
+      "price": 335,
+      "popularity": 6,
+      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    },
+    {
+
+      "name": "2 bed 1 bath",
+      "image": "image-7.jpg",
+      "price": 600,
+      "popularity": 8,
+      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    },
+    {
+
+      "name": "mountview",
+      "image": "image-8.jpg",
+      "price": 650,
+      "popularity": 12,
+      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    },
+    {
+
+      "name": "oaktree",
+      "image": "image-9.jpg",
+      "price": 559,
+      "popularity": 14,
+      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    },
+    {
+
+      "name": "the village",
+      "image": "image-10.jpg",
+      "price": 499,
+      "popularity": 8,
+      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    },
+    {
+
+      "name": "flowers",
+      "image": "image-11.jpg",
+      "price": 703,
+      "popularity": 20,
+      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    },
+    {
+
+      "name": "green lights",
+      "image": "image-12.jpg",
+      "price": 343,
+      "popularity": 6,
+      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    },
+    {
+
+      "name": "blue lights",
+      "image": "image-4.jpg",
+      "price": 555,
+      "popularity": 8,
+      "description": "University of Minnesota, Twin Cities Minneapolis, MN"
+    }
+  ]
+}
