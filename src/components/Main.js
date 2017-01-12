@@ -1,16 +1,36 @@
 require('normalize.css/normalize.css');
 require('styles/App.css');
 
-import React from 'react';
+import React, { Component } from 'react';
+import Apartment from './apartment';
 
-let yeomanImage = require('../images/yeoman.png');
+let apartmentDatas = require('../data/apartment.json');
 
-class AppComponent extends React.Component {
+apartmentDatas = ((apartmentsArr) => {
+  for (let i = 0; i < apartmentsArr.length; i++) {
+    let singleImageData = apartmentsArr[i];
+    singleImageData.imageURL = require('../images/' + singleImageData.image);
+    apartmentsArr[i] = singleImageData;
+  }
+
+  return apartmentsArr;
+} )(apartmentDatas.apartments);
+
+
+class AppComponent extends Component {
   render() {
+    let apartments = [];
+    apartmentDatas.forEach((value, index) => {
+      apartments.push(<Apartment data={ value } key={ index } />)
+      });
+
     return (
       <div className="index">
-        <img src={yeomanImage} alt="Yeoman Generator" />
-        <div className="notice">Please edit <code>src/components/Main.js</code> to get started!</div>
+        <div className="content">
+          <section className="apartment-list">
+            { apartments }
+          </section>
+        </div>
       </div>
     );
   }
