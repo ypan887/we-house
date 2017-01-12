@@ -3,9 +3,12 @@ require('bootstrap/dist/css/bootstrap.css');
 require('styles/App.css');
 
 import React, { Component } from 'react';
+import ReactPaginate from 'react-paginate';
 import Apartment from './apartment';
 
+
 let apartmentDatas = require('../data/apartment.json');
+const pageLimit = 5;
 
 apartmentDatas = ((apartmentsArr) => {
   for (let i = 0; i < apartmentsArr.length; i++) {
@@ -22,11 +25,15 @@ class AppComponent extends Component {
   constructor() {
     super();
     this.state = {
-      order: "popularity"
+      order: "popularity",
+      data: [],
+      offset: 0,
+      pageCount: Math.ceil(apartmentDatas.length / pageLimit)
     }
     this.pop = this.pop.bind(this);
     this.price = this.price.bind(this);
     this.sortApt = this.sortApt.bind(this);
+    this.handlePageClick = this.handlePageClick.bind(this);
   }
 
   sortApt(sortValue){
@@ -35,27 +42,45 @@ class AppComponent extends Component {
     });
   }
 
+  currentApts(offset) {
+    return apartmentDatas.filter((item, i) => {
+      return i >= offset && i < offset + pageLimit;
+    });
+  }
+
   pop(){
-    this.setState({order: "popularity"});
+    this.sortApt("popularity");
+    let currentApts = this.currentApts(this.state.offset);
+    this.setState({order: "popularity", data: currentApts});
   }
 
   price(){
-    this.setState({order: "price"});
+    this.sortApt("price");
+    let currentApts = this.currentApts(this.state.offset);
+    this.setState({order: "price", data: currentApts});
   }
+
+  handlePageClick(data){
+    let selected = data.selected;
+    let offset = Math.ceil(selected * pageLimit);
+    let currentApts = this.currentApts(offset);
+    this.setState({
+      offset: offset,
+      data: currentApts
+    });
+  };
 
   render() {
     let apartments = [],
         popButtonName = "btn",
         priceButtonName = "btn";
     if (this.state.order==="price") {
-      this.sortApt(this.state.order);
       priceButtonName += " active";
     } else {
-      this.sortApt(this.state.order);
       popButtonName += " active";
     }
 
-    apartmentDatas.forEach((value, index) => {
+    this.state.data.forEach((value, index) => {
       apartments.push(<Apartment data={ value } key={ index } />)
       });
 
@@ -75,6 +100,19 @@ class AppComponent extends Component {
                 <section className="apartment-list">
                   { apartments }
                 </section>
+                <div>
+                  <ReactPaginate previousLabel={"previous"}
+                       nextLabel={"next"}
+                       breakLabel={<a href="">...</a>}
+                       breakClassName={"break-me"}
+                       pageCount={this.state.pageCount}
+                       marginPagesDisplayed={2}
+                       pageRangeDisplayed={5}
+                       onPageChange={this.handlePageClick}
+                       containerClassName={"pagination"}
+                       subContainerClassName={"pages pagination"}
+                       activeClassName={"active"} />
+                </div>
               </div>
             </div>
           </div>
