@@ -75,6 +75,10 @@ body {
   border-bottom: 1px solid #c0c0c0;
 }
 
+.list-title a {
+  color: black;
+}
+
 .list-desc p {
   color: grey;
   font-size: 11px;
@@ -123,4 +127,9 @@ img {
 
 .price-unit {
   text-align: right;
+}
+
+/* detail view */
+.apartment-detail {
+  padding: 15px 0;
 }
