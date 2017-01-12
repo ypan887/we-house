@@ -1,21 +1,112 @@
 /* Base Application Styles */
 body {
-  color: #fff;
-  background: #222;
+  font-family: "Microsoft YaHei", "Helvetica";
+  background-color: #e8e8e8;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #333;
 }
 
-.index img {
-  margin: 40px auto;
-  border-radius: 4px;
-  background: #fff;
-  display: block;
+.content {
+  width: 960px;
+  position: relative;
+  margin:0 auto;
+  line-height: 1.4em;
 }
 
-.index .notice {
-  margin: 20px auto;
-  padding: 15px 0;
+/* button */
+.sort-buttons {
+  position: relative;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.btn {
+  border-radius: 0;
+  background-color: transparent;
+  color: #8F8F8F;
+  display: inline-block;
+  margin-bottom: 0;
   text-align: center;
-  border: 1px solid #000;
-  border-width: 1px 0;
-  background: #666;
+  vertical-align: middle;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+}
+
+.btn.active {
+  background-color: #F4AA29;
+  color: #333;
+  border: 1px solid transparent;
+}
+
+/* apartment list */
+.col {
+  padding: 0;
+}
+
+.apartment {
+  padding: 0;
+  margin: 0 0 15px 0;
+  overflow: hidden;
+}
+
+.list-content {
+  padding-bottom: 47.62%;
+  background-color: white;
+  margin-bottom: -100px;
+  padding: 0px 15px 115px 15px;
+  width: 100%;
+  position: relative;
+}
+
+.list-title {
+  margin: 0 0 5px;
+  padding: 5px 0;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.list-title h2 {
+  font-weight: 800;
+}
+
+.list-image {
+  width: 100%;
+  position: relative;
+  padding-bottom: 100px;
+  margin-bottom: -100px;
+}
+
+img {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.price {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: orange;
+  cursor: pointer;
+  line-height: 1.0;
+  padding: 15px;
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+.price-value {
+  font-size: 42px;
+  font-weight: 10;
+  letter-spacing: 2px;
+}
+
+.price-unit {
+  text-align: right;
 }
